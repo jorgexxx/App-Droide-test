@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Scan_Filter_AvoidMech_Ja1 = exports.Scan_Filter_PrioritizeMech_Ja1 = exports.Scan_Filter_AvoidCrossfire_Ja1 = exports.Scan_Filter_AssistAllies_Ja1 = exports.Scan_Filter_FurthestEnemies_Ja1 = exports.Scan_Filter_ClosestEnemies_Ja1 = exports.Protocols_AttachCoordinate_Job = void 0;
+exports.Protocols_AttachCoordinate_Job = void 0;
 function Protocols_AttachCoordinate_Job(obA_Prcol) {
     var a1L_Prcols;
     var a1L_NewScan;
@@ -54,7 +54,6 @@ function Scan_Filter_ClosestEnemies_Ja1(a1A_Scan) {
         return [];
     }
 }
-exports.Scan_Filter_ClosestEnemies_Ja1 = Scan_Filter_ClosestEnemies_Ja1;
 function Scan_Filter_FurthestEnemies_Ja1(a1A_Scan) {
     var a1L_NewScan;
     try {
@@ -67,7 +66,6 @@ function Scan_Filter_FurthestEnemies_Ja1(a1A_Scan) {
         return [];
     }
 }
-exports.Scan_Filter_FurthestEnemies_Ja1 = Scan_Filter_FurthestEnemies_Ja1;
 function Scan_Filter_AssistAllies_Ja1(a1A_Scan) {
     var a1L_NewScan;
     var boL_ExistAllies;
@@ -87,7 +85,6 @@ function Scan_Filter_AssistAllies_Ja1(a1A_Scan) {
         return [];
     }
 }
-exports.Scan_Filter_AssistAllies_Ja1 = Scan_Filter_AssistAllies_Ja1;
 function Scan_Filter_AvoidCrossfire_Ja1(a1A_Scan) {
     var a1L_NewScan;
     try {
@@ -99,7 +96,6 @@ function Scan_Filter_AvoidCrossfire_Ja1(a1A_Scan) {
         return [];
     }
 }
-exports.Scan_Filter_AvoidCrossfire_Ja1 = Scan_Filter_AvoidCrossfire_Ja1;
 function Scan_Filter_PrioritizeMech_Ja1(a1A_Scan) {
     var a1L_NewScan;
     try {
@@ -114,7 +110,6 @@ function Scan_Filter_PrioritizeMech_Ja1(a1A_Scan) {
         return [];
     }
 }
-exports.Scan_Filter_PrioritizeMech_Ja1 = Scan_Filter_PrioritizeMech_Ja1;
 function Scan_Filter_AvoidMech_Ja1(a1A_Scan) {
     var a1L_NewScan;
     try {
@@ -126,4 +121,3 @@ function Scan_Filter_AvoidMech_Ja1(a1A_Scan) {
         return [];
     }
 }
-exports.Scan_Filter_AvoidMech_Ja1 = Scan_Filter_AvoidMech_Ja1;
