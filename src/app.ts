@@ -1,8 +1,18 @@
 //Droide
+/**----DESCRIPTION:                 [TASK_47]
+*        Endpoint /radar created to support attack coordina
+*        te requests. (target test droide only)
+*
+*        CREATED: 2022-02-15 12:30:39, BY: GEN57.com, USER_001
+*
+*    INPUT:
+*
+*    OUTPUT:
+**/
+
 //Lib - General
     import express, {Application, Response, Request, NextFunction} from 'express';
     import bodyParser from 'body-parser';
-    import fs from 'fs';
     import path from 'path';
 
 //Modules
@@ -21,9 +31,9 @@
 //Listen server
     app.listen(inG_PORT, () => console.log("I'm listening on Port: " + inG_PORT));
 
-//Requests handlers
+//Requests handlers: End point droide
     app.post('/radar', function (req, res) {
-        var obL_Json = Protocols_AttachCoordinate_Job(req.body);
+        var obL_Json = Protocols_AttachCoordinate_Job(req.body);//decide which cordXY to attack.
         console.log(obL_Json);
-        res.json(obL_Json);
+        res.json(obL_Json);//Output: {"x":0,"y":40}
     })

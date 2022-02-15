@@ -1,7 +1,35 @@
+/**----DESCRIPTION:                 [TASK_47]
+*        Dedicated module for processing functions of droid
+*         requests by "/radar"
+*
+*        CREATED: 2022-02-15 12:32:30, BY: GEN57.com, USER_001
+*
+*    INPUT:
+*
+*    OUTPUT:
+**/
+
 import {Coordinates, JsonIn_Protocols, Scan} from './JsonTypes';
 
 export function Protocols_AttachCoordinate_Job(obA_Prcol: JsonIn_Protocols): Coordinates {
-    //Allies=0
+    /**----DESCRIPTION:                 [TASK_47]
+    *        This function manages all the decision making of t
+    *        he chosen coordinate to attack. So the droid knows
+    *         which target to choose.
+    *
+    *        CREATED: 2022-02-15 12:48:05, BY: GEN57.com, USER_001
+    *
+    *    INPUT:
+    *        obA_Prcol: JsonIn_Protocols:
+    *            Input received from the droid so that this endpoin
+    *            t decides which of all the coordinates to attack, 
+    *            based on distances, allies and types of enemies.+
+    *
+    *    OUTPUT:
+    *        An XY coordinate to attack. But if something fails
+    *        , it will return coordinate x=0, y=0: Example json
+    *        : {"x":0,"y":40}
+    **/
 
     /* Input Example
 		{   "protocols":["avoid-mech"],
@@ -11,6 +39,9 @@ export function Protocols_AttachCoordinate_Job(obA_Prcol: JsonIn_Protocols): Coo
 						"allies":5,
 						"enemies":{"type":"mech","number":1}}]
 		}  //{"x":0,"y":40}
+
+        OUTPUT json:
+            {"x":0,"y":40}
 
 - **Protocolos disponibles:**
     -	*closest-enemies* : Se deberá priorizar el punto más cercano en el que haya enemigos.
@@ -74,8 +105,20 @@ export function Protocols_AttachCoordinate_Job(obA_Prcol: JsonIn_Protocols): Coo
         }  
 }
 
-export function Scan_Filter_ClosestEnemies_Ja1(a1A_Scan: Scan[]): Scan[] {
-    //Filter by distance
+function Scan_Filter_ClosestEnemies_Ja1(a1A_Scan: Scan[]): Scan[] {
+    /**----DESCRIPTION:                 [TASK_47]
+    *        The closest point where there are enemies should b
+    *        e prioritized
+    *
+    *        CREATED: 2022-02-15 12:36:33, BY: GEN57.com, USER_001
+    *
+    *    INPUT:
+    *        a1A_Scan: Scan[]:
+    *            Array1d Scan with coordiantes to be filtered
+    *
+    *    OUTPUT:
+    *        A filtered "scan" array a1
+    **/
 
     /* Input Example
             "scan":[{   "coordinates":{"x":0,"y":40},
@@ -111,8 +154,20 @@ export function Scan_Filter_ClosestEnemies_Ja1(a1A_Scan: Scan[]): Scan[] {
         }  
 }
 
-export function Scan_Filter_FurthestEnemies_Ja1(a1A_Scan: Scan[]): Scan[] {
-    //Filter by distance
+function Scan_Filter_FurthestEnemies_Ja1(a1A_Scan: Scan[]): Scan[] {
+    /**----DESCRIPTION:                 [TASK_47]
+    *        The furthest point where there are enemies should 
+    *        be prioritized
+    *
+    *        CREATED: 2022-02-15 12:37:57, BY: GEN57.com, USER_001
+    *
+    *    INPUT:
+    *        a1A_Scan: Scan[]:
+    *            Array1d Scan with coordiantes to be filtered
+    *
+    *    OUTPUT:
+    *        A filtered "scan" array a1
+    **/
 
     /* Input Example
             "scan":[{   "coordinates":{"x":0,"y":40},
@@ -148,8 +203,20 @@ export function Scan_Filter_FurthestEnemies_Ja1(a1A_Scan: Scan[]): Scan[] {
         }  
 }
 
-export function Scan_Filter_AssistAllies_Ja1(a1A_Scan: Scan[]): Scan[] {
-    //Filter by distance
+function Scan_Filter_AssistAllies_Ja1(a1A_Scan: Scan[]): Scan[] {
+    /**----DESCRIPTION:                 [TASK_47]
+    *        You must prioritize the points where there is an a
+    *        lly
+    *
+    *        CREATED: 2022-02-15 12:39:14, BY: GEN57.com, USER_001
+    *
+    *    INPUT:
+    *        a1A_Scan: Scan[]:
+    *            Array1d Scan with coordiantes to be filtered
+    *
+    *    OUTPUT:
+    *        A filtered "scan" array a1
+    **/
 
     /* Input Example
             "scan":[{   "coordinates":{"x":0,"y":40},
@@ -195,8 +262,20 @@ export function Scan_Filter_AssistAllies_Ja1(a1A_Scan: Scan[]): Scan[] {
         }  
 }
 
-export function Scan_Filter_AvoidCrossfire_Ja1(a1A_Scan: Scan[]): Scan[] {
-    //Allies=0
+function Scan_Filter_AvoidCrossfire_Ja1(a1A_Scan: Scan[]): Scan[] {
+    /**----DESCRIPTION:                 [TASK_47]
+    *        You should not attack any point where there is an 
+    *        ally
+    *
+    *        CREATED: 2022-02-15 12:40:11, BY: GEN57.com, USER_001
+    *
+    *    INPUT:
+    *        a1A_Scan: Scan[]:
+    *            Array1d Scan with coordiantes to be filtered
+    *
+    *    OUTPUT:
+    *        A filtered "scan" array a1
+    **/
 
     /* Input Example
             "scan":[{   "coordinates":{"x":0,"y":40},
@@ -231,8 +310,20 @@ export function Scan_Filter_AvoidCrossfire_Ja1(a1A_Scan: Scan[]): Scan[] {
         }  
 }
 
-export function Scan_Filter_PrioritizeMech_Ja1(a1A_Scan: Scan[]): Scan[] {
-    //Allies=0
+function Scan_Filter_PrioritizeMech_Ja1(a1A_Scan: Scan[]): Scan[] {
+    /**----DESCRIPTION:                 [TASK_47]
+    *        Must attack a mech if found. If not, any other typ
+    *        e of objective will be valid.
+    *
+    *        CREATED: 2022-02-15 12:41:03, BY: GEN57.com, USER_001
+    *
+    *    INPUT:
+    *        a1A_Scan: Scan[]:
+    *            Array1d Scan with coordiantes to be filtered
+    *
+    *    OUTPUT:
+    *        A filtered "scan" array a1
+    **/
 
     /* Input Example
             "scan":[{   "coordinates":{"x":0,"y":40},
@@ -270,8 +361,19 @@ export function Scan_Filter_PrioritizeMech_Ja1(a1A_Scan: Scan[]): Scan[] {
         }  
 }
 
-export function Scan_Filter_AvoidMech_Ja1(a1A_Scan: Scan[]): Scan[] {
-    //Allies=0
+function Scan_Filter_AvoidMech_Ja1(a1A_Scan: Scan[]): Scan[] {
+    /**----DESCRIPTION:                 [TASK_47]
+    *        No Mech-type enemies should be attacked.
+    *
+    *        CREATED: 2022-02-15 12:41:55, BY: GEN57.com, USER_001
+    *
+    *    INPUT:
+    *        a1A_Scan: Scan[]:
+    *            Array1d Scan with coordiantes to be filtered
+    *
+    *    OUTPUT:
+    *        A filtered "scan" array a1
+    **/
 
     /* Input Example
             "scan":[{   "coordinates":{"x":0,"y":40},
